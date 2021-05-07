@@ -1,0 +1,9 @@
+.dashboard-wrapper{
+    padding: 20px
+}
+
+.date-picker-wrapper{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
