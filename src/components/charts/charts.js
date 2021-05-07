@@ -22,6 +22,7 @@ function Charts() {
         )
     );
 
+
     if (loading) {
         return <Loading/>
     } else if (error) {
