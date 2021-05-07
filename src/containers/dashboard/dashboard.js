@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from "react";
-import { useDispatch } from "react-redux";
+import {useDispatch} from "react-redux";
 import Charts from "../../components/charts";
 import './style.css'
 import {getDomainMetrics} from "./actions";
@@ -55,22 +55,27 @@ function Dashboard() {
 
 
     return (
-        <div className="dashboard-wrapper">
+        <div>
 
-            <div className="date-picker-wrapper">
+            <div className="dashboard-wrapper">
+                <h2>Performance Metrics !</h2>
 
-                <DateTimePickers
-                    dateRange={dateRange}
-                    onChange={handleSetDateRange}
-                />
 
-                <ActionButtons onClick={handleAction}/>
+                <div className="date-picker-wrapper">
+                    <DateTimePickers
+                        dateRange={dateRange}
+                        onChange={handleSetDateRange}
+                    />
+
+                    <ActionButtons onClick={handleAction}/>
+                </div>
+
+
+                <Charts/>
             </div>
 
-
-
-            <Charts/>
         </div>
+
     )
 }
 

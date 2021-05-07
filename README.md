@@ -1,4 +1,24 @@
 
-<img width="1680" alt="Screen Shot 2021-04-17 at 11 49 29 PM" src="https://user-images.githubusercontent.com/82615231/115126432-a29e4b00-9fd7-11eb-999b-b5508787e055.png">
 
-# performance-dashboard
+# Performance Analytic Dashboard 
+
+This repository shows the charts of the  performance metrics of itself . Default time range is last 30 minutes but also any specific time range can be selected to display .
+
+
+## Installation
+
+```angular2html
+npm install
+```
+
+
+## Initialization
+
+performance-metrics-analyser is the library to measurement and communication with backend services.
+```angular2html
+import PerformanceAnalyser from 'performance-metrics-analyser';
+
+const PerformanceMetricAnalyser = PerformanceAnalyser('http://localhost:5555/api/v1/metrics/create') // declare your endpoint url to store measure performance data .
+PerformanceMetricAnalyser.analyse(); // trigger function.
+
+```
