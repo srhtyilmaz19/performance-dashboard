@@ -5,10 +5,10 @@ const initialState = {
     error: false,
     metrics: [],
     charts: [
-        {key: 'fcp', label: 'First Contentful Paint', data: []},
-        {key: 'ttfb', label: 'Time To First Byte', data: []},
-        {key: 'dom_load', label: 'DOM Load', data: []},
-        {key: 'window_load', label: 'Window Load', data: []},
+        {key: 'fcp', title: 'First Contentful Paint', data: []},
+        {key: 'ttfb', title: 'Time To First Byte', data: []},
+        {key: 'dom_load', title: 'DOM Load', data: []},
+        {key: 'window_load', title: 'Window Load', data: []},
     ]
 
 

@@ -10,11 +10,10 @@ const computedMetricsSelector = createSelector(
     (metrics, charts) => {
         return charts.map(chart => Object.assign({}, chart, {
             data: metrics.map(metric => ({
-                value: metric[chart.key],
+                title: chart.title,
                 x: new Date(metric.timestamp * 1000),
                 y: metric[chart.key],
                 label: format(new Date(metric.timestamp * 1000), 'HH:mm:ss'),
-                timestamp: metric.timestamp
             }))
         }));
     }

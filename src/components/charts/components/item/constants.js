@@ -7,7 +7,7 @@ const chartOptions = (chartType) => {
         animationEnabled: true,
         animationDuration: 3000,
         title: {
-            text: chartType.key
+            text: chartType.title
         },
         axisX: {
             valueFormatString: "HH:mm:ss",
