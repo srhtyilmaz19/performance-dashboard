@@ -8,13 +8,13 @@ const CanvasJSChart = CanvasJSReact.CanvasJSChart;
 
 function ChartItem(props) {
 
-    const {chartType} = props
+    const {metrics} = props
 
     const [options, setOptions] = useState({})
 
     useEffect(() => {
-        if (chartType)setOptions(chartOptions(chartType))
-    }, [chartType])
+        if (metrics) setOptions(chartOptions(metrics))
+    }, [metrics])
 
     return (
         <div className="item-wrapper">

@@ -13,21 +13,25 @@ function Charts() {
     const loading = useSelector(state => state.dashboard.loading)
     const error = useSelector(state => state.dashboard.error)
 
-    const renderCharts = () => {
-        return formattedMetrics.map((item) => {
-            return (
+    const renderCharts = () => (
+        formattedMetrics.map(item => (
                 <div className="chart" key={item.key}>
-                    <ChartItem chartType={item}/>
+                    <ChartItem metrics={item}/>
                 </div>
-            );
-        });
-    };
+            )
+        )
+    );
+
+    if (loading) {
+        return <Loading/>
+    } else if (error) {
+        return <Error/>
+    }
 
     return (
         <div className="chart-wrapper">
-
             {
-                loading ? <Loading/> : error ? <Error/> : renderCharts()
+                renderCharts()
             }
         </div>
     )
