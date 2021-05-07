@@ -1,6 +1,5 @@
 import React, {useEffect, useState} from "react";
 import CanvasJSReact from "../../../../canvasjs.react";
-import NoData from "../../../no-data";
 import './style.css';
 import chartOptions from "./constants";
 
