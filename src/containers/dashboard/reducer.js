@@ -2,6 +2,7 @@ import types from './action-types';
 
 const initialState = {
     loading: true,
+    error: false,
     metrics: [],
     charts: [
         {key: 'fcp', label: 'First Contentful Paint', data: []},
@@ -16,6 +17,14 @@ const initialState = {
 const dashboardReducer = (state = initialState, action) => {
     switch (action.type) {
 
+        case types.GET_DOMAIN_METRICS:
+            return {
+                ...state,
+                loading: true,
+                error: false,
+                metrics: []
+            }
+
         case types.GET_DOMAIN_METRICS_SUCCESS:
             return {
                 ...state,
@@ -27,10 +36,10 @@ const dashboardReducer = (state = initialState, action) => {
             return {
                 ...state,
                 metrics: [],
-                loading: true
+                loading: false,
+                error: true,
             }
 
-            // TODO INITIAL STATE
 
         default:
             return state;

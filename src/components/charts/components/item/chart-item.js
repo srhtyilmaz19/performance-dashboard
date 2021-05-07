@@ -18,9 +18,7 @@ function ChartItem(props) {
 
     return (
         <div className="item-wrapper">
-            {
-                chartType && chartType.data.length >= 1 ? <CanvasJSChart options={options}/> : <NoData/>
-            }
+            <CanvasJSChart options={options}/>
         </div>
     )
 };
