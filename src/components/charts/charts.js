@@ -9,10 +9,10 @@ function Charts() {
     const formattedMetrics = useSelector(computedMetricsSelector)
 
     const renderCharts = () => {
-        return Object.keys(formattedMetrics).map((key) => {
+        return formattedMetrics.map((item) => {
             return (
-                <div className="chart" key={key}>
-                    <ChartItem chartType={formattedMetrics[key]}/>
+                <div className="chart" key={item.key}>
+                    <ChartItem chartType={item}/>
                 </div>
             );
         });
