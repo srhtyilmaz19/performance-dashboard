@@ -1,35 +1,33 @@
 import React from "react";
 
-import {cleanup, render} from "@testing-library/react";
-import '@testing-library/jest-dom/extend-expect';
+import { cleanup, render } from "@testing-library/react";
+import "@testing-library/jest-dom/extend-expect";
 import Error from "./error";
 
-afterEach(cleanup)
+afterEach(cleanup);
 
-describe('<NoData />', () => {
+describe("<NoData />", () => {
+  it("should render error component", function () {
+    const { asFragment } = render(<Error />);
 
-    it('should render error component', function () {
-        const {asFragment} = render(<Error/>)
+    expect(asFragment()).toMatchSnapshot();
+  });
 
-        expect(asFragment()).toMatchSnapshot();
-    });
+  it("should have class", function () {
+    const handleClick = () => console.log("handleClick triggered !");
 
-    it('should have class', function () {
-        const handleClick = () => console.log('handleClick triggered !');
+    const { getByTestId } = render(<Error onClick={handleClick} />);
 
-        const {getByTestId} = render(<Error onClick={handleClick}/>)
+    const button = getByTestId("error-component");
 
-        const button = getByTestId('error-component');
+    expect(button).toHaveClass("loading-wrapper");
+  });
 
-        expect(button).toHaveClass('loading-wrapper');
-    });
+  it("should text class", function () {
+    const { getByTestId } = render(<Error onClick={() => {}} />);
 
-    it('should text class', function () {
-        const {getByTestId} = render(<Error onClick={()=>{}}/>)
+    const button = getByTestId("error-text");
 
-        const button = getByTestId('error-text');
-
-        expect(button).toHaveTextContent('Error. please try again later !');
-    });
-
-})
+    expect(button).toHaveTextContent("Error. please try again later !");
+  });
+});

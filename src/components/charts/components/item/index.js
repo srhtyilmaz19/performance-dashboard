@@ -1,1 +1,1 @@
-export {default} from './chart-item'
+export { default } from "./chart-item";

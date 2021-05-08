@@ -1,16 +1,14 @@
 .chart-item {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 750px;
-    height: 400px;
-    margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 750px;
+  height: 400px;
+  margin-top: 10px;
 }
 
-
 @media only screen and (max-width: 992px) {
-    .chart-item {
-        width: 100%;
-    }
-
+  .chart-item {
+    width: 100%;
+  }
 }

@@ -1,37 +1,33 @@
 import React from "react";
 
-import {cleanup, render} from "@testing-library/react";
-import '@testing-library/jest-dom/extend-expect';
+import { cleanup, render } from "@testing-library/react";
+import "@testing-library/jest-dom/extend-expect";
 import Loading from "./Loading";
 
-afterEach(cleanup)
+afterEach(cleanup);
 
-describe('<Loading />', () => {
+describe("<Loading />", () => {
+  it("should render Loading component", function () {
+    const { asFragment } = render(<Loading />);
 
-    it('should render Loading component', function () {
-        const {asFragment} = render(<Loading/>)
+    expect(asFragment()).toMatchSnapshot();
+  });
 
-        expect(asFragment()).toMatchSnapshot();
-    });
+  it("should have class", function () {
+    const { getByTestId } = render(<Loading />);
 
-    it('should have class', function () {
+    const loadingWrapper = getByTestId("loading-wrapper");
+    const loadingInner = getByTestId("loading-inner");
 
-        const {getByTestId} = render(<Loading/>)
+    expect(loadingWrapper).toHaveClass("loading-wrapper");
+    expect(loadingInner).toHaveClass("lds-dual-ring");
+  });
 
-        const loadingWrapper = getByTestId('loading-wrapper');
-        const loadingInner = getByTestId('loading-inner');
+  it("should text class", function () {
+    const { getByTestId } = render(<Loading />);
 
-        expect(loadingWrapper).toHaveClass('loading-wrapper');
-        expect(loadingInner).toHaveClass('lds-dual-ring');
-    });
+    const button = getByTestId("loading-text");
 
-    it('should text class', function () {
-
-        const {getByTestId} = render(<Loading/>)
-
-        const button = getByTestId('loading-text');
-
-        expect(button).toHaveTextContent('Loading.');
-    });
-
-})
+    expect(button).toHaveTextContent("Loading.");
+  });
+});

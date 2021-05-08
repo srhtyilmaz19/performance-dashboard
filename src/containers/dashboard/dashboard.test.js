@@ -1,93 +1,88 @@
 import React from "react";
 
-import {cleanup, render, screen} from "@testing-library/react";
-import '@testing-library/jest-dom/extend-expect';
+import { cleanup, render, screen } from "@testing-library/react";
+import "@testing-library/jest-dom/extend-expect";
 import Dashboard from "./dashboard";
-import {combineReducers, createStore} from "redux";
-import {Provider} from "react-redux";
+import { combineReducers, createStore } from "redux";
+import { Provider } from "react-redux";
 import types from "./action-types";
 
-afterEach(cleanup)
-
+afterEach(cleanup);
 
 const initialState = {
-    loading: true,
-    error: false,
-    metrics: [],
-    charts: [
-        {key: 'fcp', title: 'First Contentful Paint', data: []},
-        {key: 'ttfb', title: 'Time To First Byte', data: []},
-        {key: 'dom_load', title: 'DOM Load', data: []},
-        {key: 'window_load', title: 'Window Load', data: []},
-    ]
+  loading: true,
+  error: false,
+  metrics: [],
+  charts: [
+    { key: "fcp", title: "First Contentful Paint", data: [] },
+    { key: "ttfb", title: "Time To First Byte", data: [] },
+    { key: "dom_load", title: "DOM Load", data: [] },
+    { key: "window_load", title: "Window Load", data: [] },
+  ],
 };
 
-
 function reducer(state = initialState, action) {
-    switch (action.type) {
+  switch (action.type) {
+    case types.GET_DOMAIN_METRICS:
+      return {
+        ...state,
+        loading: true,
+        error: false,
+        metrics: [],
+      };
 
-        case types.GET_DOMAIN_METRICS:
-            return {
-                ...state,
-                loading: true,
-                error: false,
-                metrics: []
-            }
+    case types.GET_DOMAIN_METRICS_SUCCESS:
+      return {
+        ...state,
+        metrics: action.data,
+        loading: false,
+      };
 
-        case types.GET_DOMAIN_METRICS_SUCCESS:
-            return {
-                ...state,
-                metrics: action.data,
-                loading: false
-            }
+    case types.GET_DOMAIN_METRICS_ERROR:
+      return {
+        ...state,
+        metrics: [],
+        loading: false,
+        error: true,
+      };
 
-        case types.GET_DOMAIN_METRICS_ERROR:
-            return {
-                ...state,
-                metrics: [],
-                loading: false,
-                error: true,
-            }
-
-
-        default:
-            return state;
-    }
+    default:
+      return state;
+  }
 }
 
 const combinedReducers = combineReducers({
-    dashboard: reducer,
+  dashboard: reducer,
 });
 
-
 function renderWithRedux(Component) {
-    return {
-        ...render(<Provider store={createStore(combinedReducers)}> {Component} </Provider>)
-    }
+  return {
+    ...render(
+      <Provider store={createStore(combinedReducers)}> {Component} </Provider>
+    ),
+  };
 }
 
-describe('<Dashboard/>', () => {
+describe("<Dashboard/>", () => {
+  it("should render with redux", function () {
+    const { asFragment } = renderWithRedux(<Dashboard />);
 
-        it('should render with redux', function () {
-            const {asFragment} = renderWithRedux(<Dashboard/>)
+    expect(asFragment()).toMatchSnapshot();
+  });
 
-            expect(asFragment()).toMatchSnapshot();
-        });
+  it("should contain 2 action-buttons", async () => {
+    renderWithRedux(<Dashboard />);
 
-        it('should contain 2 action-buttons', async () => {
-            renderWithRedux(<Dashboard/>)
+    const buttons = screen.getAllByRole("button");
 
-            const buttons = screen.getAllByRole('button')
+    expect(Object.keys(buttons).length).toBe(2);
+  });
 
-            expect(Object.keys(buttons).length).toBe(2)
-        });
+  it("should contain 2 date-time-picker inputs", async () => {
+    renderWithRedux(<Dashboard />);
 
-        it('should contain 2 date-time-picker inputs', async () => {
-            renderWithRedux(<Dashboard/>)
+    const buttons = screen.getAllByRole("input", { type: "text" });
 
-            const buttons = screen.getAllByRole('input', {type: 'text'})
-
-            expect(Object.keys(buttons).length).toBe(2)
-        });
-    }
-);
+    expect(Object.keys(buttons).length).toBe(2);
+  });
+});

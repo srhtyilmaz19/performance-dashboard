@@ -1,43 +1,38 @@
 import React from "react";
 
-import {cleanup, render} from "@testing-library/react";
-import '@testing-library/jest-dom/extend-expect';
+import { cleanup, render } from "@testing-library/react";
+import "@testing-library/jest-dom/extend-expect";
 import ActionButtons from "./action-buttons";
 
-afterEach(cleanup)
+afterEach(cleanup);
 
-describe('<ActionButtons />', () => {
+describe("<ActionButtons />", () => {
+  it("should render action-buttons", function () {
+    const handleClick = () => console.log("handleClick triggered !");
+    const { asFragment } = render(<ActionButtons onClick={handleClick} />);
 
-    it('should render action-buttons', function () {
-        const handleClick = () => console.log('handleClick triggered !');
-        const {asFragment} = render(<ActionButtons onClick={handleClick}/>)
+    expect(asFragment()).toMatchSnapshot();
+  });
 
-        expect(asFragment()).toMatchSnapshot();
-    });
+  it("filter button should have class and text", function () {
+    const handleClick = () => console.log("handleClick triggered !");
 
-    it('filter button should have class and text', function () {
-        const handleClick = () => console.log('handleClick triggered !');
+    const { getByTestId } = render(<ActionButtons onClick={handleClick} />);
 
-        const {getByTestId} = render(<ActionButtons onClick={handleClick}/>)
+    const button = getByTestId("filter-button");
 
-        const button = getByTestId('filter-button');
+    expect(button).toHaveClass("button");
+    expect(button).toHaveTextContent("FILTER");
+  });
 
-        expect(button).toHaveClass('button');
-        expect(button).toHaveTextContent('FILTER');
-    });
+  it("reset button should have class and text", function () {
+    const handleClick = () => console.log("handleClick triggered !");
 
+    const { getByTestId } = render(<ActionButtons onClick={handleClick} />);
 
-    it('reset button should have class and text', function () {
-        const handleClick = () => console.log('handleClick triggered !');
+    const button = getByTestId("reset-button");
 
-        const {getByTestId} = render(<ActionButtons onClick={handleClick}/>)
-
-        const button = getByTestId('reset-button');
-
-        expect(button).toHaveClass('button');
-        expect(button).toHaveTextContent('RESET');
-
-    });
-
-
-})
+    expect(button).toHaveClass("button");
+    expect(button).toHaveTextContent("RESET");
+  });
+});

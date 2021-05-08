@@ -1,27 +1,26 @@
 .no-data-item-wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 750px;
-    height: 400px;
-    margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 750px;
+  height: 400px;
+  margin-top: 10px;
 }
 
 .loading-wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 45%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 45%;
 }
 
-.no-data-text{
-    font-weight: 800;
-    color: red;
+.no-data-text {
+  font-weight: 800;
+  color: red;
 }
 
 @media only screen and (max-width: 992px) {
-    .no-data-item-wrapper {
-        width: 100%;
-    }
-
+  .no-data-item-wrapper {
+    width: 100%;
+  }
 }
