@@ -26,8 +26,8 @@ describe("<Loading />", () => {
   it("should text class", function () {
     const { getByTestId } = render(<Loading />);
 
-    const button = getByTestId("loading-text");
+    const loadingText = getByTestId("loading-text");
 
-    expect(button).toHaveTextContent("Loading.");
+    expect(loadingText).toHaveTextContent("Loading.");
   });
 });

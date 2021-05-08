@@ -23,7 +23,7 @@ exports[`<Dashboard/> should render with redux 1`] = `
             class="MuiInputBase-input MuiInput-input"
             id="start_date"
             type="text"
-            value="2021/05/08 23:11"
+            value="2021/05/09 01:34"
           />
         </div>
         <div
@@ -34,7 +34,7 @@ exports[`<Dashboard/> should render with redux 1`] = `
             class="MuiInputBase-input MuiInput-input"
             id="end_date"
             type="text"
-            value="2021/05/08 23:41"
+            value="2021/05/09 02:04"
           />
         </div>
       </div>

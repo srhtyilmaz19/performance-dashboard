@@ -31,7 +31,7 @@ describe("<DateTimePickers />", () => {
   it("should contain date-time-pickers", async () => {
     const getById = queryByAttribute.bind(null, "id");
 
-    const nowDate = () => new Date();
+    var nowDate = () => new Date(2018, 11, 24, 10, 33, 30, 0);
 
     const mockDateRange = {
       start_date: subMinutes(nowDate(), 30),
@@ -53,7 +53,7 @@ describe("<DateTimePickers />", () => {
   it("should match with default values", async () => {
     const getById = queryByAttribute.bind(null, "id");
 
-    const nowDate = () => new Date();
+    var nowDate = () => new Date(2018, 11, 24, 10, 33, 30, 0);
 
     const mockDateRange = {
       start_date: subMinutes(nowDate(), 30),
@@ -79,7 +79,7 @@ describe("<DateTimePickers />", () => {
   it("should match with updated values", async () => {
     const getById = queryByAttribute.bind(null, "id");
 
-    const nowDate = () => new Date();
+    var nowDate = () => new Date(2018, 11, 24, 10, 33, 30, 0);
 
     const mockDateRange = {
       start_date: subMinutes(nowDate(), 30),

@@ -18,9 +18,9 @@ describe("<NoData />", () => {
 
     const { getByTestId } = render(<NoData onClick={handleClick} />);
 
-    const button = getByTestId("no-data-item-wrapper");
+    const itemWrapper = getByTestId("no-data-item-wrapper");
 
-    expect(button).toHaveClass("item-wrapper");
+    expect(itemWrapper).toHaveClass("item-wrapper");
   });
 
   it("should text class", function () {
@@ -28,8 +28,8 @@ describe("<NoData />", () => {
 
     const { getByTestId } = render(<NoData onClick={handleClick} />);
 
-    const button = getByTestId("no-data-item");
+    const noDataContent = getByTestId("no-data-item");
 
-    expect(button).toHaveTextContent("No valid data found.");
+    expect(noDataContent).toHaveTextContent("No valid data found.");
   });
 });

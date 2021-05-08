@@ -18,16 +18,16 @@ describe("<NoData />", () => {
 
     const { getByTestId } = render(<Error onClick={handleClick} />);
 
-    const button = getByTestId("error-component");
+    const errorComponent = getByTestId("error-component");
 
-    expect(button).toHaveClass("loading-wrapper");
+    expect(errorComponent).toHaveClass("loading-wrapper");
   });
 
   it("should text class", function () {
     const { getByTestId } = render(<Error onClick={() => {}} />);
 
-    const button = getByTestId("error-text");
+    const errorText = getByTestId("error-text");
 
-    expect(button).toHaveTextContent("Error. please try again later !");
+    expect(errorText).toHaveTextContent("Error. please try again later !");
   });
 });
