@@ -48,11 +48,9 @@ function Dashboard() {
         dispatch(getDomainMetrics());
     }
 
-
     useEffect(() => {
         dispatch(getDomainMetrics());
     }, [dispatch])
-
 
     return (
         <div>

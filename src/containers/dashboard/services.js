@@ -1,9 +1,9 @@
 import React from "react";
-import {fetchInstance} from "../../services/instance";
+import {axiosInstance} from "../../utils/axios";
 
 
 class DomainServices extends React.Component {
-    list = (instance) => fetchInstance(instance);
+    list = (instance) => axiosInstance(instance);
 }
 
 const domainServices = new DomainServices();
