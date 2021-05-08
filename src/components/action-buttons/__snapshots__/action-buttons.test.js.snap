@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ActionButtons /> should render action-buttons 1`] = `
+<DocumentFragment>
+  <button
+    class="button"
+    data-testid="filter-button"
+  >
+    FILTER
+  </button>
+  <button
+    class="button"
+    data-testid="reset-button"
+  >
+    RESET
+  </button>
+</DocumentFragment>
+`;

@@ -1,10 +1,10 @@
-import PerformanceAnalyser from 'performance-metrics-analyser';
+import MeasureBrowserPerformance from 'measure-browser-performance';
 import React from "react";
 import {Route} from "react-router-dom";
 import Dashboard from "../dashboard";
 
 
-const PerformanceMetricAnalyser = PerformanceAnalyser('http://localhost:5555/api/v1/metrics/create')
+const PerformanceMetricAnalyser = MeasureBrowserPerformance('http://localhost:5555/api/v1/metrics/create')
 PerformanceMetricAnalyser.analyse();
 
 

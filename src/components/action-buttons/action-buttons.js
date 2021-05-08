@@ -6,8 +6,8 @@ function ActionButtons({onClick}) {
 
     return (
         <>
-            <button className="button" onClick={()=>onClick('filter')}>FILTER</button>
-            <button className="button" onClick={()=>onClick('reset')}>RESET</button>
+            <button data-testid="filter-button" className="button" onClick={() => onClick('filter')}>FILTER</button>
+            <button data-testid="reset-button" className="button" onClick={() => onClick('reset')}>RESET</button>
         </>
     )
 

@@ -6,12 +6,10 @@
     "@date-io/date-fns": "^1.3.13",
     "@material-ui/core": "4.11.4",
     "@material-ui/pickers": "3.3.10",
-    "@testing-library/jest-dom": "5.12.0",
-    "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
     "connected-react-router": "6.9.1",
     "date-fns": "2.21.2",
-    "performance-metrics-analyser": "1.0.3",
+    "measure-browser-performance": "1.0.0",
     "prop-types": "15.7.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
@@ -46,5 +44,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "5.12.0",
+    "@testing-library/react": "11.2.6"
   }
 }
