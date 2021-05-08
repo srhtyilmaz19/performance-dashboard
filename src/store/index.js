@@ -6,6 +6,7 @@ import dashboardSaga from "../containers/dashboard/sagas";
 const sagaMiddleware = createSagaMiddleware();
 
 
+// created combineReducers for maintainable and sustainable project !
 const combinedReducers = combineReducers({
     dashboard: dashboardReducer,
 });

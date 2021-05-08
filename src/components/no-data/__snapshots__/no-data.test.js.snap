@@ -8,8 +8,9 @@ exports[`<NoData /> should render error component 1`] = `
   >
     <p
       class="no-data-text"
+      data-testid="no-data-item"
     >
-      No valid data for 
+      No valid data found.
     </p>
   </div>
 </DocumentFragment>

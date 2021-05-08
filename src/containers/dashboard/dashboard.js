@@ -53,26 +53,23 @@ function Dashboard() {
     }, [dispatch])
 
     return (
-        <div>
-
-            <div className="dashboard-wrapper">
-                <h2>Performance Metrics !</h2>
+        <div className="dashboard-wrapper">
+            <h2>Performance Metrics !</h2>
 
 
-                <div className="date-picker-wrapper">
-                    <DateTimePickers
-                        dateRange={dateRange}
-                        onChange={handleSetDateRange}
-                    />
+            <div className="date-picker-wrapper">
+                <DateTimePickers
+                    dateRange={dateRange}
+                    onChange={handleSetDateRange}
+                />
 
-                    <ActionButtons onClick={handleAction}/>
-                </div>
-
-
-                <Charts/>
+                <ActionButtons onClick={handleAction}/>
             </div>
 
+
+            <Charts/>
         </div>
+
 
     )
 }

@@ -2,8 +2,16 @@
 
 exports[`<ChartItem /> should render error component 1`] = `
 <DocumentFragment>
-  <p>
-    NOT VALID DATA
-  </p>
+  <div
+    class="item-wrapper"
+    data-testid="no-data-item-wrapper"
+  >
+    <p
+      class="no-data-text"
+      data-testid="no-data-item"
+    >
+      No valid data found.
+    </p>
+  </div>
 </DocumentFragment>
 `;

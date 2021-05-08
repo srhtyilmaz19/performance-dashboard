@@ -25,13 +25,11 @@ describe('<NoData />', () => {
     });
 
     it('should text class', function () {
-        const handleClick = () => console.log('handleClick triggered !');
+        const {getByTestId} = render(<Error onClick={()=>{}}/>)
 
-        const {getByTestId} = render(<Error onClick={handleClick}/>)
+        const button = getByTestId('error-text');
 
-        const button = getByTestId('error-component');
-
-        expect(button).toHaveTextContent('NoData. please try again later !');
+        expect(button).toHaveTextContent('Error. please try again later !');
     });
 
 })

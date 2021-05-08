@@ -19,9 +19,9 @@ describe('<NoData />', () => {
 
         const {getByTestId} = render(<NoData onClick={handleClick}/>)
 
-        const button = getByTestId('error-component');
+        const button = getByTestId('no-data-item-wrapper');
 
-        expect(button).toHaveClass('loading-wrapper');
+        expect(button).toHaveClass('item-wrapper');
     });
 
     it('should text class', function () {
@@ -29,9 +29,9 @@ describe('<NoData />', () => {
 
         const {getByTestId} = render(<NoData onClick={handleClick}/>)
 
-        const button = getByTestId('error-component');
+        const button = getByTestId('no-data-item');
 
-        expect(button).toHaveTextContent('NoData. please try again later !');
+        expect(button).toHaveTextContent('No valid data found.');
     });
 
 })

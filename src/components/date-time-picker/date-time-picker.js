@@ -24,6 +24,7 @@ function DateTimePickers(props) {
 
     const renderInput = (props) => (
         <Input
+            role={'input'}
             id={props.key}
             type="text"
             onClick={props.onClick}

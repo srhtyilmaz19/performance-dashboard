@@ -17,13 +17,13 @@ function ChartItem(props) {
         if (metrics) setOptions(chartOptions(metrics))
     }, [metrics])
 
-    if (metrics.data.length <= 0) {
+    if (!metrics.data || metrics.data.length <= 0) {
         return <NoData type={metrics.title}/>
     }
 
 
     return (
-        <div className="item-wrapper">
+        <div className="chart-item">
             <CanvasJSChart options={options}/>
         </div>
     )

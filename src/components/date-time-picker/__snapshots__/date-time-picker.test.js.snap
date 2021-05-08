@@ -7,22 +7,24 @@ exports[`<DateTimePickers /> should render date-time-pickers 1`] = `
   >
     <div
       class="MuiInputBase-root MuiInput-root MuiInput-underline makeStyles-textField-2"
+      role="input"
     >
       <input
         class="MuiInputBase-input MuiInput-input"
         id="start_date"
         type="text"
-        value="2021/05/08 15:20"
+        value="2021/05/08 18:23"
       />
     </div>
     <div
       class="MuiInputBase-root MuiInput-root MuiInput-underline makeStyles-textField-2"
+      role="input"
     >
       <input
         class="MuiInputBase-input MuiInput-input"
         id="end_date"
         type="text"
-        value="2021/05/08 15:50"
+        value="2021/05/08 18:53"
       />
     </div>
   </div>

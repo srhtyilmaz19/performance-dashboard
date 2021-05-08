@@ -10,8 +10,6 @@ const initialState = {
         {key: 'dom_load', title: 'DOM Load', data: []},
         {key: 'window_load', title: 'Window Load', data: []},
     ]
-
-
 };
 
 const dashboardReducer = (state = initialState, action) => {

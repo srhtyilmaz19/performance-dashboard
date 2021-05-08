@@ -9,7 +9,7 @@ exports[`<NoData /> should render error component 1`] = `
     <p
       data-testid="error-text"
     >
-      NoData. please try again later !
+      Error. please try again later !
     </p>
   </div>
 </DocumentFragment>

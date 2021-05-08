@@ -1,4 +1,5 @@
 import CanvasJSReact from "../../../../canvasjs.react";
+
 const CanvasJS = CanvasJSReact.CanvasJS;
 
 
