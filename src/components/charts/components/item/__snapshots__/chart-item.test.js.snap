@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ChartItem /> should render error component 1`] = `
+<DocumentFragment>
+  <p>
+    NOT VALID DATA
+  </p>
+</DocumentFragment>
+`;

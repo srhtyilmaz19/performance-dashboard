@@ -1,5 +1,5 @@
 import React from "react";
-import './charts.style.css'
+import './charts.css'
 import {useSelector} from "react-redux";
 import ChartItem from "./components/item";
 import {computedMetricsSelector} from "../../containers/dashboard/selector";

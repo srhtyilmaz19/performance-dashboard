@@ -1,7 +1,9 @@
 import React, {useEffect, useState} from "react";
 import CanvasJSReact from "../../../../canvasjs.react";
-import './style.css';
+import './chart-item.css';
 import chartOptions from "./constants";
+import PropTypes from "prop-types";
+import NoData from "../../../no-data";
 
 const CanvasJSChart = CanvasJSReact.CanvasJSChart;
 
@@ -15,11 +17,20 @@ function ChartItem(props) {
         if (metrics) setOptions(chartOptions(metrics))
     }, [metrics])
 
+    if (metrics.data.length <= 0) {
+        return <NoData type={metrics.title}/>
+    }
+
+
     return (
         <div className="item-wrapper">
             <CanvasJSChart options={options}/>
         </div>
     )
+};
+
+ChartItem.propTypes = {
+    metrics: PropTypes.object.isRequired,
 };
 
 export default ChartItem

@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from "react";
 import {useDispatch} from "react-redux";
 import Charts from "../../components/charts";
-import './style.css'
+import './dashboard.css'
 import {getDomainMetrics} from "./actions";
 import DateTimePickers from "../../components/date-time-picker";
 import {subMinutes} from "date-fns";

@@ -3,13 +3,13 @@
 exports[`<NoData /> should render error component 1`] = `
 <DocumentFragment>
   <div
-    class="loading-wrapper"
-    data-testid="error-component"
+    class="item-wrapper"
+    data-testid="no-data-item-wrapper"
   >
     <p
-      data-testid="error-text"
+      class="no-data-text"
     >
-      NoData. please try again later !
+      No valid data for 
     </p>
   </div>
 </DocumentFragment>
