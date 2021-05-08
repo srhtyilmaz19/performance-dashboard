@@ -74,7 +74,6 @@ describe('<Dashboard/>', () => {
             expect(asFragment()).toMatchSnapshot();
         });
 
-
         it('should contain 2 action-buttons', async () => {
             renderWithRedux(<Dashboard/>)
 
@@ -82,7 +81,6 @@ describe('<Dashboard/>', () => {
 
             expect(Object.keys(buttons).length).toBe(2)
         });
-
 
         it('should contain 2 date-time-picker inputs', async () => {
             renderWithRedux(<Dashboard/>)
