@@ -15,7 +15,7 @@ afterEach(cleanup);
 
 describe("<DateTimePickers />", () => {
   it("should render date-time-pickers", async () => {
-    const nowDate = () => new Date();
+    var nowDate = () => new Date(2018, 11, 24, 10, 33, 30, 0);
 
     const mockDateRange = {
       start_date: subMinutes(nowDate(), 30),

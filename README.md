@@ -1,24 +1,38 @@
+# Performance Analytic Dashboard
 
-
-# Performance Analytic Dashboard 
-
-This repository shows the charts of the  performance metrics of itself . Default time range is last 30 minutes but also any specific time range can be selected to display .
-
-
-## Installation
-
-```angular2html
-npm install
-```
-
+This repository shows the charts of the performance metrics of itself . Default time range is last 30 minutes but also any specific time range can be selected to display .
 
 ## Initialization
 
 performance-metrics-analyser is the library to measurement and communication with backend services.
-```angular2html
-import PerformanceAnalyser from 'performance-metrics-analyser';
-
-const PerformanceMetricAnalyser = PerformanceAnalyser('http://localhost:5555/api/v1/metrics/create') // declare your endpoint url to store measure performance data .
-PerformanceMetricAnalyser.analyse(); // trigger function.
 
 ```
+const PerformanceMetricAnalyser = MeasureBrowserPerformance(
+  process.env.REACT_APP_ANALYTICS_ENDPOINT # define your service endpoint in .env
+);
+PerformanceMetricAnalyser.analyse();
+```
+
+### Available Scripts
+
+In the project directory, you can run:
+
+```
+npm install
+```
+
+Install necessary packages. You need to run this script only once.
+
+```
+npm start
+```
+
+Runs the app in the development mode. Watches your changes. \
+Open [http://localhost:4444](http://localhost:4444) to view project in the browser.
+
+```
+npm test
+```
+
+Runs a predefined tests of the project. \
+Results will shown on the console.
