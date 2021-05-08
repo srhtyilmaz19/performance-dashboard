@@ -5,12 +5,14 @@ exports[`<ActionButtons /> should render action-buttons 1`] = `
   <button
     class="button"
     data-testid="filter-button"
+    type="button"
   >
     FILTER
   </button>
   <button
     class="button"
     data-testid="reset-button"
+    type="button"
   >
     RESET
   </button>
