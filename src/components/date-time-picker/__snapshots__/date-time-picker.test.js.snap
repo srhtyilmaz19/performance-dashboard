@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<DateTimePickers /> should render date-time-pickers 1`] = `
+<DocumentFragment>
+  <div
+    class="makeStyles-container-1"
+  >
+    <div
+      class="MuiInputBase-root MuiInput-root MuiInput-underline makeStyles-textField-2"
+    >
+      <input
+        class="MuiInputBase-input MuiInput-input"
+        id="start_date"
+        type="text"
+        value="2021/05/08 15:20"
+      />
+    </div>
+    <div
+      class="MuiInputBase-root MuiInput-root MuiInput-underline makeStyles-textField-2"
+    >
+      <input
+        class="MuiInputBase-input MuiInput-input"
+        id="end_date"
+        type="text"
+        value="2021/05/08 15:50"
+      />
+    </div>
+  </div>
+</DocumentFragment>
+`;
