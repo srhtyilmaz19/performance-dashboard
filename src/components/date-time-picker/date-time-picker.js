@@ -38,7 +38,9 @@ function DateTimePickers(props) {
         {Object.keys(dateRange).map((key) => (
           <DateTimePicker
             format="yyyy/MM/dd HH:mm"
-            TextFieldComponent={(props) => renderInput({ ...props, key })}
+            TextFieldComponent={(textFieldPrps) =>
+              renderInput({ ...textFieldPrps, key })
+            }
             className={classes.textField}
             key={key}
             autoOk
@@ -56,6 +58,7 @@ function DateTimePickers(props) {
 
 DateTimePickers.propTypes = {
   onChange: PropTypes.func.isRequired,
+  // eslint-disable-next-line react/forbid-prop-types
   dateRange: PropTypes.object.isRequired,
 };
 

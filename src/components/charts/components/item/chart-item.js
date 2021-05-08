@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
-import CanvasJSReact from "../../../../canvasjs.react";
-import "./chart-item.css";
-import chartOptions from "./constants";
 import PropTypes from "prop-types";
+
+import CanvasJSReact from "../../../../canvasjs.react";
+import chartOptions from "./constants";
 import NoData from "../../../no-data";
+
+import "./chart-item.css";
 
 const { CanvasJSChart } = CanvasJSReact;
 

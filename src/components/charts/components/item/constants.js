@@ -1,8 +1,8 @@
 import CanvasJSReact from "../../../../canvasjs.react";
 
-const CanvasJS = CanvasJSReact.CanvasJS;
-
 const chartOptions = (chartType) => {
+  const CanvasJS = CanvasJSReact.CanvasJS;
+
   return {
     animationEnabled: true,
     animationDuration: 3000,
