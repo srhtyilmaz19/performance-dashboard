@@ -3,29 +3,37 @@
 exports[`<DateTimePickers /> should render date-time-pickers 1`] = `
 <DocumentFragment>
   <div
-    class="makeStyles-container-1"
+    class="MuiGrid-root makeStyles-datePickerContainer-1 MuiGrid-container MuiGrid-spacing-xs-2"
   >
     <div
-      class="MuiInputBase-root MuiInput-root MuiInput-underline makeStyles-textField-2"
-      role="input"
+      class="MuiGrid-root MuiGrid-item MuiGrid-grid-sm-12 MuiGrid-grid-md-6"
     >
-      <input
-        class="MuiInputBase-input MuiInput-input"
-        id="start_date"
-        type="text"
-        value="2020/05/09 02:07"
-      />
+      <div
+        class="MuiInputBase-root MuiInput-root MuiInput-underline makeStyles-textField-2"
+        role="input"
+      >
+        <input
+          class="MuiInputBase-input MuiInput-input"
+          id="start_date"
+          type="text"
+          value="2020/05/09 02:07"
+        />
+      </div>
     </div>
     <div
-      class="MuiInputBase-root MuiInput-root MuiInput-underline makeStyles-textField-2"
-      role="input"
+      class="MuiGrid-root MuiGrid-item MuiGrid-grid-sm-12 MuiGrid-grid-md-6"
     >
-      <input
-        class="MuiInputBase-input MuiInput-input"
-        id="end_date"
-        type="text"
-        value="2020/05/09 02:37"
-      />
+      <div
+        class="MuiInputBase-root MuiInput-root MuiInput-underline makeStyles-textField-2"
+        role="input"
+      >
+        <input
+          class="MuiInputBase-input MuiInput-input"
+          id="end_date"
+          type="text"
+          value="2020/05/09 02:37"
+        />
+      </div>
     </div>
   </div>
 </DocumentFragment>

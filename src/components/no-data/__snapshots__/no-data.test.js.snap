@@ -3,8 +3,8 @@
 exports[`<NoData /> should render error component 1`] = `
 <DocumentFragment>
   <div
-    class="item-wrapper"
-    data-testid="no-data-item-wrapper"
+    class="no-data-item-wrapper"
+    data-testid="no-data-item-container"
   >
     <p
       class="no-data-text"
@@ -12,6 +12,12 @@ exports[`<NoData /> should render error component 1`] = `
     >
       No valid data found.
     </p>
+    <span
+      class="no-data-description"
+      data-testid="no-data-description"
+    >
+      Default date range is last 30 min. You're observing this message means there were no any activity for last 30 min. Refresh page to load new data or select any specified date range to display data.
+    </span>
   </div>
 </DocumentFragment>
 `;

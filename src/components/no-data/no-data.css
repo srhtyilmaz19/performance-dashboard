@@ -6,6 +6,7 @@
   height: 400px;
   margin-top: 10px;
   flex-direction: column;
+  padding: 30px;
 }
 
 .loading-wrapper {
@@ -18,6 +19,11 @@
 .no-data-text {
   font-weight: 800;
   color: red;
+}
+
+.no-data-description {
+  max-width: 50%;
+  text-align: center;
 }
 
 @media only screen and (max-width: 992px) {
