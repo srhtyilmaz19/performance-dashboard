@@ -12,8 +12,8 @@ import DateTimePickers from "./date-time-picker";
 afterEach(cleanup);
 
 describe("<DateTimePickers />", () => {
-  var nowDate = () => "2020/05/09 02:37";
-  var nowDateMinus30 = () => "2020/05/09 02:07";
+  const nowDate = () => "2020/05/09 02:37";
+  const nowDateMinus30 = () => "2020/05/09 02:07";
 
   const mockOnClick = jest.fn();
 
@@ -72,12 +72,12 @@ describe("<DateTimePickers />", () => {
     const startDateTimePicker = getById(dom.container, "start_date");
     const endDateTimePicker = getById(dom.container, "end_date");
 
-    startDateTimePicker.value = "2020/05/09 02:37";
-    endDateTimePicker.value = "2020/05/09 01:37";
+    startDateTimePicker.value = "2020/05/09 12:37";
+    endDateTimePicker.value = "2020/05/09 11:37";
 
     await waitFor(() => {
-      expect(startDateTimePicker).toHaveValue("2020/05/09 02:37");
-      expect(endDateTimePicker).toHaveValue("2020/05/09 01:37");
+      expect(startDateTimePicker).toHaveValue("2020/05/09 12:37");
+      expect(endDateTimePicker).toHaveValue("2020/05/09 11:37");
     });
   });
 });

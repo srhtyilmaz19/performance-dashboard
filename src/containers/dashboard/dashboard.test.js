@@ -1,12 +1,11 @@
 import React from "react";
-
-import {cleanup, fireEvent, queryByAttribute, render, screen, waitFor} from "@testing-library/react";
-import "@testing-library/jest-dom/extend-expect";
-import Dashboard from "./dashboard";
+import {cleanup, render, screen} from "@testing-library/react";
 import { combineReducers, createStore } from "redux";
 import { Provider } from "react-redux";
+import "@testing-library/jest-dom/extend-expect";
+
+import Dashboard from "./dashboard";
 import types from "./action-types";
-import DateTimePickers from "../../components/date-time-picker";
 
 afterEach(cleanup);
 

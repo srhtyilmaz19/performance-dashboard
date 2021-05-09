@@ -1,6 +1,6 @@
 import { put, call, takeLatest } from "redux-saga/effects";
 import types from "./action-types";
-import domainServices from "./services";
+import domainServices from "../../services/services";
 import { getDomainMetricsError, getDomainMetricsSuccess } from "./actions";
 
 function* getDomainMetricsObs(obj) {

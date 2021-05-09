@@ -1,17 +1,17 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
-import "./dashboard.css";
 import subMinutes from "date-fns/subMinutes";
+
 import { getDomainMetrics } from "./actions";
 import DateTimePickers from "../../components/date-time-picker";
 import Charts from "../../components/charts";
 import ActionButtons from "../../components/action-buttons";
+import "./dashboard.css";
 
 const nowDate = () => new Date();
 
 function Dashboard() {
   const dispatch = useDispatch();
-
   const [dateRange, setDateRange] = useState({
     start_date: subMinutes(nowDate(), 30),
     end_date: nowDate(),
@@ -24,10 +24,7 @@ function Dashboard() {
     }));
   };
 
-  const handleFilter = () => {
-    // TODO PREVENT UNNECESSARY FETCHES !
-    dispatch(getDomainMetrics(dateRange));
-  };
+  const handleFilter = () => dispatch(getDomainMetrics(dateRange));
 
   const handleReset = () => {
     setDateRange({

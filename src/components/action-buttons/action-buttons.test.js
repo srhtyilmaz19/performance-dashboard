@@ -18,18 +18,18 @@ describe("<ActionButtons />", () => {
   it("filter button should have class and text", function () {
     const { getByTestId } = render(<ActionButtons onClick={mockOnClick} />);
 
-    const button = getByTestId("filter-button");
+    const filterButton = getByTestId("filter-button");
 
-    expect(button).toHaveClass("button");
-    expect(button).toHaveTextContent("FILTER");
+    expect(filterButton).toHaveClass("button");
+    expect(filterButton).toHaveTextContent("FILTER");
   });
 
   it("reset button should have class and text", function () {
     const { getByTestId } = render(<ActionButtons onClick={mockOnClick} />);
 
-    const button = getByTestId("reset-button");
+    const resetButton = getByTestId("reset-button");
 
-    expect(button).toHaveClass("button");
-    expect(button).toHaveTextContent("RESET");
+    expect(resetButton).toHaveClass("button");
+    expect(resetButton).toHaveTextContent("RESET");
   });
 });

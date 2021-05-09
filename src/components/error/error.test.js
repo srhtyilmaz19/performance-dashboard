@@ -7,6 +7,8 @@ import Error from "./error";
 afterEach(cleanup);
 
 describe("<NoData />", () => {
+  const mockOnClick = jest.fn();
+
   it("should render error component", function () {
     const { asFragment } = render(<Error />);
 
@@ -14,9 +16,7 @@ describe("<NoData />", () => {
   });
 
   it("should have class", function () {
-    const handleClick = () => console.log("handleClick triggered !");
-
-    const { getByTestId } = render(<Error onClick={handleClick} />);
+    const { getByTestId } = render(<Error onClick={mockOnClick} />);
 
     const errorComponent = getByTestId("error-component");
 
@@ -24,7 +24,7 @@ describe("<NoData />", () => {
   });
 
   it("should text class", function () {
-    const { getByTestId } = render(<Error onClick={() => {}} />);
+    const { getByTestId } = render(<Error onClick={mockOnClick} />);
 
     const errorText = getByTestId("error-text");
 
