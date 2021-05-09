@@ -34,10 +34,10 @@ exports[`<DateTimePickers /> should render date-time-pickers 1`] = `
           />
           <fieldset
             aria-hidden="true"
-            class="PrivateNotchedOutline-root-3 MuiOutlinedInput-notchedOutline"
+            class="PrivateNotchedOutline-root-1 MuiOutlinedInput-notchedOutline"
           >
             <legend
-              class="PrivateNotchedOutline-legendLabelled-5 PrivateNotchedOutline-legendNotched-6"
+              class="PrivateNotchedOutline-legendLabelled-3 PrivateNotchedOutline-legendNotched-4"
             >
               <span>
                 start_date
@@ -76,10 +76,10 @@ exports[`<DateTimePickers /> should render date-time-pickers 1`] = `
           />
           <fieldset
             aria-hidden="true"
-            class="PrivateNotchedOutline-root-3 MuiOutlinedInput-notchedOutline"
+            class="PrivateNotchedOutline-root-1 MuiOutlinedInput-notchedOutline"
           >
             <legend
-              class="PrivateNotchedOutline-legendLabelled-5 PrivateNotchedOutline-legendNotched-6"
+              class="PrivateNotchedOutline-legendLabelled-3 PrivateNotchedOutline-legendNotched-4"
             >
               <span>
                 end_date
