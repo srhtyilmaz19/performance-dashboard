@@ -2,6 +2,13 @@
 
 This repository shows the charts of the performance metrics of itself . Default time range is last 30 minutes but also any specific time range can be selected to display .
 
+
+
+https://user-images.githubusercontent.com/82615231/117569831-2d063600-b0d0-11eb-99e3-1b4b76db5650.mov
+
+
+
+
 ## Initialization
 
 performance-metrics-analyser is the library to measurement and communication with backend services.
