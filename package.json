@@ -28,7 +28,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "coverage": "react-scripts test --coverage",
-    "test:all": "react-scripts test --watchAll=false"
+    "test:all": "CI=true react-scripts test --watchAll=false"
   },
   "browserslist": {
     "production": [
