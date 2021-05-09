@@ -1,11 +1,12 @@
 import React from "react";
 
-import { cleanup, render, screen } from "@testing-library/react";
+import {cleanup, fireEvent, queryByAttribute, render, screen, waitFor} from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
 import Dashboard from "./dashboard";
 import { combineReducers, createStore } from "redux";
 import { Provider } from "react-redux";
 import types from "./action-types";
+import DateTimePickers from "../../components/date-time-picker";
 
 afterEach(cleanup);
 
@@ -64,11 +65,6 @@ function renderWithRedux(Component) {
 }
 
 describe("<Dashboard/>", () => {
-  it("should render with redux", function () {
-    const { asFragment } = renderWithRedux(<Dashboard />);
-
-    expect(asFragment()).toMatchSnapshot();
-  });
 
   it("should contain 2 action-buttons", async () => {
     renderWithRedux(<Dashboard />);
@@ -85,4 +81,5 @@ describe("<Dashboard/>", () => {
 
     expect(Object.keys(buttons).length).toBe(2);
   });
+
 });

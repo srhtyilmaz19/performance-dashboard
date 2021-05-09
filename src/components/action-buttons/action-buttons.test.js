@@ -7,17 +7,16 @@ import ActionButtons from "./action-buttons";
 afterEach(cleanup);
 
 describe("<ActionButtons />", () => {
+  const mockOnClick = jest.fn();
+
   it("should render action-buttons", function () {
-    const handleClick = () => console.log("handleClick triggered !");
-    const { asFragment } = render(<ActionButtons onClick={handleClick} />);
+    const { asFragment } = render(<ActionButtons onClick={mockOnClick} />);
 
     expect(asFragment()).toMatchSnapshot();
   });
 
   it("filter button should have class and text", function () {
-    const handleClick = () => console.log("handleClick triggered !");
-
-    const { getByTestId } = render(<ActionButtons onClick={handleClick} />);
+    const { getByTestId } = render(<ActionButtons onClick={mockOnClick} />);
 
     const button = getByTestId("filter-button");
 
@@ -26,9 +25,7 @@ describe("<ActionButtons />", () => {
   });
 
   it("reset button should have class and text", function () {
-    const handleClick = () => console.log("handleClick triggered !");
-
-    const { getByTestId } = render(<ActionButtons onClick={handleClick} />);
+    const { getByTestId } = render(<ActionButtons onClick={mockOnClick} />);
 
     const button = getByTestId("reset-button");
 

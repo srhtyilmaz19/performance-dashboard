@@ -5,6 +5,7 @@
   width: 750px;
   height: 400px;
   margin-top: 10px;
+  flex-direction: column;
 }
 
 .loading-wrapper {

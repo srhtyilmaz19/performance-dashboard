@@ -13,7 +13,7 @@ exports[`<DateTimePickers /> should render date-time-pickers 1`] = `
         class="MuiInputBase-input MuiInput-input"
         id="start_date"
         type="text"
-        value="2018/12/24 10:03"
+        value="2020/05/09 02:07"
       />
     </div>
     <div
@@ -24,7 +24,7 @@ exports[`<DateTimePickers /> should render date-time-pickers 1`] = `
         class="MuiInputBase-input MuiInput-input"
         id="end_date"
         type="text"
-        value="2018/12/24 10:33"
+        value="2020/05/09 02:37"
       />
     </div>
   </div>

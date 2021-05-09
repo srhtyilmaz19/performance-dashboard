@@ -8,21 +8,23 @@ import {
 } from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
 import DateTimePickers from "./date-time-picker";
-import { format, subMinutes } from "date-fns";
-import userEvent from "@testing-library/user-event";
 
 afterEach(cleanup);
 
 describe("<DateTimePickers />", () => {
-  it("should render date-time-pickers", async () => {
-    var nowDate = () => new Date(2018, 11, 24, 10, 33, 30, 0);
+  var nowDate = () => "2020/05/09 02:37";
+  var nowDateMinus30 = () => "2020/05/09 02:07";
 
-    const mockDateRange = {
-      start_date: subMinutes(nowDate(), 30),
-      end_date: nowDate(),
-    };
+  const mockOnClick = jest.fn();
+
+  const mockDateRange = {
+    start_date: nowDateMinus30(),
+    end_date: nowDate(),
+  };
+
+  it("should render date-time-pickers", async () => {
     const { asFragment } = render(
-      <DateTimePickers dateRange={mockDateRange} onChange={() => {}} />
+      <DateTimePickers dateRange={mockDateRange} onChange={mockOnClick} />
     );
 
     expect(asFragment()).toMatchSnapshot();
@@ -31,14 +33,8 @@ describe("<DateTimePickers />", () => {
   it("should contain date-time-pickers", async () => {
     const getById = queryByAttribute.bind(null, "id");
 
-    var nowDate = () => new Date(2018, 11, 24, 10, 33, 30, 0);
-
-    const mockDateRange = {
-      start_date: subMinutes(nowDate(), 30),
-      end_date: nowDate(),
-    };
     const dom = render(
-      <DateTimePickers dateRange={mockDateRange} onChange={() => {}} />
+      <DateTimePickers dateRange={mockDateRange} onChange={mockOnClick} />
     );
 
     await waitFor(() => {
@@ -53,62 +49,35 @@ describe("<DateTimePickers />", () => {
   it("should match with default values", async () => {
     const getById = queryByAttribute.bind(null, "id");
 
-    var nowDate = () => new Date(2018, 11, 24, 10, 33, 30, 0);
-
-    const mockDateRange = {
-      start_date: subMinutes(nowDate(), 30),
-      end_date: nowDate(),
-    };
     const dom = render(
-      <DateTimePickers dateRange={mockDateRange} onChange={() => {}} />
+      <DateTimePickers dateRange={mockDateRange} onChange={mockOnClick} />
     );
 
-    await waitFor(() => {
-      const startDateTimePicker = getById(dom.container, "start_date");
-      const endDateTimePicker = getById(dom.container, "end_date");
+    const startDateTimePicker = getById(dom.container, "start_date");
+    const endDateTimePicker = getById(dom.container, "end_date");
 
-      expect(startDateTimePicker.value).toBe(
-        format(mockDateRange.start_date, "yyyy/MM/dd HH:mm")
-      );
-      expect(endDateTimePicker.value).toBe(
-        format(mockDateRange.end_date, "yyyy/MM/dd HH:mm")
-      );
+    await waitFor(() => {
+      expect(startDateTimePicker.value).toBe("2020/05/09 02:07");
+      expect(endDateTimePicker.value).toBe("2020/05/09 02:37");
     });
   });
 
   it("should match with updated values", async () => {
     const getById = queryByAttribute.bind(null, "id");
 
-    var nowDate = () => new Date(2018, 11, 24, 10, 33, 30, 0);
-
-    const mockDateRange = {
-      start_date: subMinutes(nowDate(), 30),
-      end_date: nowDate(),
-    };
-
     const dom = render(
-      <DateTimePickers dateRange={mockDateRange} onChange={() => {}} />
+      <DateTimePickers dateRange={mockDateRange} onChange={mockOnClick} />
     );
 
+    const startDateTimePicker = getById(dom.container, "start_date");
+    const endDateTimePicker = getById(dom.container, "end_date");
+
+    startDateTimePicker.value = "2020/05/09 02:37";
+    endDateTimePicker.value = "2020/05/09 01:37";
+
     await waitFor(() => {
-      const startDateTimePicker = getById(dom.container, "end_date");
-      const endDateTimePicker = getById(dom.container, "start_date");
-
-      userEvent.type(
-        startDateTimePicker,
-        format(mockDateRange.end_date, "yyyy/MM/dd HH:mm")
-      );
-      userEvent.type(
-        endDateTimePicker,
-        format(mockDateRange.start_date, "yyyy/MM/dd HH:mm")
-      );
-
-      expect(startDateTimePicker).toHaveValue(
-        format(mockDateRange.end_date, "yyyy/MM/dd HH:mm")
-      );
-      expect(endDateTimePicker).toHaveValue(
-        format(mockDateRange.start_date, "yyyy/MM/dd HH:mm")
-      );
+      expect(startDateTimePicker).toHaveValue("2020/05/09 02:37");
+      expect(endDateTimePicker).toHaveValue("2020/05/09 01:37");
     });
   });
 });

@@ -58,7 +58,6 @@ function DateTimePickers(props) {
 
 DateTimePickers.propTypes = {
   onChange: PropTypes.func.isRequired,
-  // eslint-disable-next-line react/forbid-prop-types
   dateRange: PropTypes.object.isRequired,
 };
 

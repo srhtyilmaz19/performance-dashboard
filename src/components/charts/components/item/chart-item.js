@@ -18,7 +18,7 @@ function ChartItem(props) {
   }, [metrics]);
 
   if (!metrics.data || metrics.data.length <= 0) {
-    return <NoData type={metrics.title} />;
+    return <NoData />;
   }
 
   return (
