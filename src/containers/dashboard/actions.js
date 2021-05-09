@@ -10,7 +10,7 @@ export const getDomainMetrics = (data) => ({
 
 export const getDomainMetricsSuccess = (data) => ({
   type: types.GET_DOMAIN_METRICS_SUCCESS,
-  data,
+  data: data.metrics,
 });
 
 export const getDomainMetricsError = () => ({

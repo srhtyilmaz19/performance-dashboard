@@ -1,5 +1,5 @@
 import React from "react";
-import {cleanup, render, screen} from "@testing-library/react";
+import { cleanup, render, screen } from "@testing-library/react";
 import { combineReducers, createStore } from "redux";
 import { Provider } from "react-redux";
 import "@testing-library/jest-dom/extend-expect";
@@ -32,9 +32,10 @@ function reducer(state = initialState, action) {
       };
 
     case types.GET_DOMAIN_METRICS_SUCCESS:
+      console.log(action.data);
       return {
         ...state,
-        metrics: action.data,
+        metrics: action.data.metrics,
         loading: false,
       };
 
@@ -64,7 +65,6 @@ function renderWithRedux(Component) {
 }
 
 describe("<Dashboard/>", () => {
-
   it("should contain 2 action-buttons", async () => {
     renderWithRedux(<Dashboard />);
 
@@ -80,5 +80,4 @@ describe("<Dashboard/>", () => {
 
     expect(Object.keys(buttons).length).toBe(2);
   });
-
 });
