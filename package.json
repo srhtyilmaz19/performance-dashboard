@@ -28,7 +28,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "coverage": "react-scripts test --coverage",
-    "test:all": "react-scripts test --watchAll"
+    "test:all": "react-scripts test --watchAll",
+    "prepare": "husky install"
   },
   "browserslist": {
     "production": [
