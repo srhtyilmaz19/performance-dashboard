@@ -2,9 +2,9 @@
 
 This repository shows the charts of the performance metrics of itself . Default time range is last 30 minutes but also any specific time range can be selected to display .
 
+[Click to see Demo App](https://perfanalytics-dashboard.yilmazserhat.com/)
 
 https://user-images.githubusercontent.com/82615231/117569872-545d0300-b0d0-11eb-8a66-d31ee2de3145.mov
-
 
 ## Initialization
 
