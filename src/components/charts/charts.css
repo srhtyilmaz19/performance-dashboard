@@ -5,3 +5,9 @@
   align-items: center;
   justify-content: center;
 }
+
+@media only screen and (max-width: 992px) {
+  .MuiGrid-root.MuiGrid-container {
+    flex-direction: column;
+  }
+}

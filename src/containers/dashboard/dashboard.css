@@ -15,3 +15,18 @@ h2 {
   justify-content: center;
   margin-bottom: 30px;
 }
+
+@media only screen and (max-width: 992px) {
+  .date-picker-wrapper {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  button {
+    margin-top: 10px;
+  }
+
+  .makeStyles-textField-2 {
+    width: 100%;
+  }
+}

@@ -3,16 +3,15 @@ import PropTypes from "prop-types";
 import { makeStyles } from "@material-ui/core/styles";
 import { DateTimePicker, MuiPickersUtilsProvider } from "@material-ui/pickers";
 import DateFnsUtils from "@date-io/date-fns";
-import { Input } from "@material-ui/core";
+import { Grid, Input } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
-  container: {
-    marginRight: theme.spacing(2),
+  datePickerContainer: {
+    justifyContent: "center",
   },
   textField: {
     marginLeft: theme.spacing(1),
     marginRight: theme.spacing(1),
-    width: 300,
   },
 }));
 
@@ -33,26 +32,29 @@ function DateTimePickers(props) {
   );
 
   return (
-    <div className={classes.container}>
+    <Grid className={classes.datePickerContainer} container spacing={2}>
       <MuiPickersUtilsProvider utils={DateFnsUtils}>
-        {Object.keys(dateRange).map((key) => (
-          <DateTimePicker
-            format="yyyy/MM/dd HH:mm"
-            TextFieldComponent={(textFieldPrps) =>
-              renderInput({ ...textFieldPrps, key })
-            }
-            className={classes.textField}
-            key={key}
-            autoOk
-            inputVariant="outlined"
-            disableFuture
-            value={dateRange[key]}
-            onChange={(e) => onChange(key, new Date(e))}
-            label={key}
-          />
+        {Object.keys(dateRange).map((key, index) => (
+          <Grid item sm={12} md={6} key={index}>
+            <DateTimePicker
+              format="yyyy/MM/dd HH:mm"
+              TextFieldComponent={(textFieldPrps) =>
+                renderInput({ ...textFieldPrps, key })
+              }
+              fullWidth
+              className={classes.textField}
+              key={key}
+              autoOk
+              inputVariant="outlined"
+              disableFuture
+              value={dateRange[key]}
+              onChange={(e) => onChange(key, new Date(e))}
+              label={key}
+            />
+          </Grid>
         ))}
       </MuiPickersUtilsProvider>
-    </div>
+    </Grid>
   );
 }
 

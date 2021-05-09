@@ -1,10 +1,12 @@
 import React from "react";
-import "./charts.css";
+import { Grid } from "@material-ui/core";
+
 import { useSelector } from "react-redux";
 import ChartItem from "./components/item";
 import { computedMetricsSelector } from "../../containers/dashboard/selector";
 import Loading from "../loading";
 import Error from "../error";
+import "./charts.css";
 
 function Charts() {
   const formattedMetrics = useSelector(computedMetricsSelector);
@@ -13,9 +15,9 @@ function Charts() {
 
   const renderCharts = () =>
     formattedMetrics.map((item) => (
-      <div className="chart" key={item.key}>
+      <Grid item sm={12} md={6} key={item.key}>
         <ChartItem metrics={item} />
-      </div>
+      </Grid>
     ));
 
   if (loading) {
@@ -25,7 +27,11 @@ function Charts() {
     return <Error />;
   }
 
-  return <div className="chart-wrapper">{renderCharts()}</div>;
+  return (
+    <Grid container spacing={2}>
+      {renderCharts()}
+    </Grid>
+  );
 }
 
 export default Charts;
