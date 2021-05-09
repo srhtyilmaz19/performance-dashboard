@@ -5,6 +5,8 @@ import {
   render,
   waitFor,
   queryByAttribute,
+  screen,
+  fireEvent,
 } from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
 import DateTimePickers from "./date-time-picker";
@@ -12,14 +14,14 @@ import DateTimePickers from "./date-time-picker";
 afterEach(cleanup);
 
 describe("<DateTimePickers />", () => {
-  const nowDate = () => "2020/05/09 02:37";
-  const nowDateMinus30 = () => "2020/05/09 02:07";
+  const nowDate = new Date(2018, 11, 24, 10, 57, 30, 0);
+  const nowDateMinus30 = new Date(2018, 11, 24, 10, 27, 30, 0);
 
   const mockOnClick = jest.fn();
 
   const mockDateRange = {
-    start_date: nowDateMinus30(),
-    end_date: nowDate(),
+    start_date: nowDateMinus30,
+    end_date: nowDate,
   };
 
   it("should render date-time-pickers", async () => {
@@ -33,51 +35,46 @@ describe("<DateTimePickers />", () => {
   it("should contain date-time-pickers", async () => {
     const getById = queryByAttribute.bind(null, "id");
 
-    const dom = render(
+    const { getByTestId } = render(
       <DateTimePickers dateRange={mockDateRange} onChange={mockOnClick} />
     );
 
     await waitFor(() => {
-      const startDateTimePicker = getById(dom.container, "start_date");
-      const endDateTimePicker = getById(dom.container, "end_date");
+      const startDateTimePicker = getByTestId("start_date");
+      const endDateTimePicker = getByTestId("end_date");
 
       expect(startDateTimePicker).toBeInTheDocument();
       expect(endDateTimePicker).toBeInTheDocument();
     });
   });
 
-  it("should match with default values", async () => {
-    const getById = queryByAttribute.bind(null, "id");
-
-    const dom = render(
+  it("should match with default values", () => {
+    const { getByTestId } = render(
       <DateTimePickers dateRange={mockDateRange} onChange={mockOnClick} />
     );
 
-    const startDateTimePicker = getById(dom.container, "start_date");
-    const endDateTimePicker = getById(dom.container, "end_date");
+    const startDateTimePicker = getByTestId("start_date");
+    const endDateTimePicker = getByTestId("end_date");
 
-    await waitFor(() => {
-      expect(startDateTimePicker.value).toBe("2020/05/09 02:07");
-      expect(endDateTimePicker.value).toBe("2020/05/09 02:37");
-    });
+    expect(startDateTimePicker.value).toBe("2018/12/24 10:27");
+    expect(endDateTimePicker.value).toBe("2018/12/24 10:57");
   });
 
-  it("should match with updated values", async () => {
-    const getById = queryByAttribute.bind(null, "id");
-
-    const dom = render(
+  it("should show date-time modal on click start date input", async () => {
+    const { getByTestId } = render(
       <DateTimePickers dateRange={mockDateRange} onChange={mockOnClick} />
     );
 
-    const startDateTimePicker = getById(dom.container, "start_date");
-    const endDateTimePicker = getById(dom.container, "end_date");
+    const startDateInput = getByTestId("start_date");
 
-    startDateTimePicker.value = "2020/05/09 12:37";
-    endDateTimePicker.value = "2020/05/09 11:37";
+    fireEvent.click(startDateInput);
 
-    await waitFor(() => {
-      expect(startDateTimePicker).toHaveValue("2020/05/09 12:37");
-      expect(endDateTimePicker).toHaveValue("2020/05/09 11:37");
-    });
+    const dialog = await waitFor(() =>
+      screen.getAllByRole("dialog", {
+        className: "MuiDialog-root",
+      })
+    );
+
+    expect(dialog[0]).toBeInTheDocument();
   });
 });

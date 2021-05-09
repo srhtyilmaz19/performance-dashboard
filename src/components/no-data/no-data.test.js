@@ -41,7 +41,7 @@ describe("<NoData />", () => {
     const noDataDescription = getByTestId("no-data-description");
 
     expect(noDataDescription).toHaveTextContent(
-      "Default date range is last 30 min. You're observing this message means there were no any activity for last 30 min. Refresh page to load new data or select any specified date range to display data."
+      "Default date range is last 30 min. You're observing this message means there were no any activity for last 30 min. Refresh page or select any specified date range to display data."
     );
   });
 });

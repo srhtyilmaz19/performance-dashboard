@@ -3,36 +3,90 @@
 exports[`<DateTimePickers /> should render date-time-pickers 1`] = `
 <DocumentFragment>
   <div
-    class="MuiGrid-root makeStyles-datePickerContainer-1 MuiGrid-container MuiGrid-spacing-xs-2"
+    class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-2"
   >
     <div
       class="MuiGrid-root MuiGrid-item MuiGrid-grid-sm-12 MuiGrid-grid-md-6"
     >
       <div
-        class="MuiInputBase-root MuiInput-root MuiInput-underline makeStyles-textField-2"
-        role="input"
+        class="MuiFormControl-root MuiTextField-root"
+        data-testid="date-picker-testid-start_date"
+        format="yyyy/MM/dd HH:mm"
       >
-        <input
-          class="MuiInputBase-input MuiInput-input"
-          id="start_date"
-          type="text"
-          value="2020/05/09 02:07"
-        />
+        <label
+          class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-outlined MuiFormLabel-filled"
+          data-shrink="true"
+        >
+          start_date
+        </label>
+        <div
+          class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-formControl"
+        >
+          <input
+            aria-invalid="false"
+            class="MuiInputBase-input MuiOutlinedInput-input"
+            data-testid="start_date"
+            name="key"
+            readonly=""
+            role="input"
+            type="text"
+            value="2018/12/24 10:27"
+          />
+          <fieldset
+            aria-hidden="true"
+            class="PrivateNotchedOutline-root-3 MuiOutlinedInput-notchedOutline"
+          >
+            <legend
+              class="PrivateNotchedOutline-legendLabelled-5 PrivateNotchedOutline-legendNotched-6"
+            >
+              <span>
+                start_date
+              </span>
+            </legend>
+          </fieldset>
+        </div>
       </div>
     </div>
     <div
       class="MuiGrid-root MuiGrid-item MuiGrid-grid-sm-12 MuiGrid-grid-md-6"
     >
       <div
-        class="MuiInputBase-root MuiInput-root MuiInput-underline makeStyles-textField-2"
-        role="input"
+        class="MuiFormControl-root MuiTextField-root"
+        data-testid="date-picker-testid-end_date"
+        format="yyyy/MM/dd HH:mm"
       >
-        <input
-          class="MuiInputBase-input MuiInput-input"
-          id="end_date"
-          type="text"
-          value="2020/05/09 02:37"
-        />
+        <label
+          class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-outlined MuiFormLabel-filled"
+          data-shrink="true"
+        >
+          end_date
+        </label>
+        <div
+          class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-formControl"
+        >
+          <input
+            aria-invalid="false"
+            class="MuiInputBase-input MuiOutlinedInput-input"
+            data-testid="end_date"
+            name="key"
+            readonly=""
+            role="input"
+            type="text"
+            value="2018/12/24 10:57"
+          />
+          <fieldset
+            aria-hidden="true"
+            class="PrivateNotchedOutline-root-3 MuiOutlinedInput-notchedOutline"
+          >
+            <legend
+              class="PrivateNotchedOutline-legendLabelled-5 PrivateNotchedOutline-legendNotched-6"
+            >
+              <span>
+                end_date
+              </span>
+            </legend>
+          </fieldset>
+        </div>
       </div>
     </div>
   </div>

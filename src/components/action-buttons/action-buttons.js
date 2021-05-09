@@ -4,7 +4,7 @@ import "./action-buttons.css";
 
 function ActionButtons({ onClick }) {
   return (
-    <>
+    <div className="buttons-container">
       <button
         type="button"
         data-testid="filter-button"
@@ -21,7 +21,7 @@ function ActionButtons({ onClick }) {
       >
         RESET
       </button>
-    </>
+    </div>
   );
 }
 

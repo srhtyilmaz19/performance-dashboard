@@ -2,19 +2,23 @@
 
 exports[`<ActionButtons /> should render action-buttons 1`] = `
 <DocumentFragment>
-  <button
-    class="button"
-    data-testid="filter-button"
-    type="button"
+  <div
+    class="buttons-container"
   >
-    FILTER
-  </button>
-  <button
-    class="button"
-    data-testid="reset-button"
-    type="button"
-  >
-    RESET
-  </button>
+    <button
+      class="button"
+      data-testid="filter-button"
+      type="button"
+    >
+      FILTER
+    </button>
+    <button
+      class="button"
+      data-testid="reset-button"
+      type="button"
+    >
+      RESET
+    </button>
+  </div>
 </DocumentFragment>
 `;
