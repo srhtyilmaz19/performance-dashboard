@@ -10,9 +10,10 @@ https://user-images.githubusercontent.com/82615231/117569872-545d0300-b0d0-11eb-
 
 performance-metrics-analyser is the library to measurement and communication with backend services.
 
-```
+```javascript
 const PerformanceMetricAnalyser = MeasureBrowserPerformance(
-  process.env.REACT_APP_ANALYTICS_ENDPOINT # define your service endpoint in .env
+  process.env.REACT_APP_ANALYTICS_ENDPOINT,
+  true // set false to disable measurement time in console.
 );
 PerformanceMetricAnalyser.analyse();
 ```
